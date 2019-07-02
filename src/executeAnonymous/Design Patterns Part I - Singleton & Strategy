@@ -1,0 +1,40 @@
+
+Singleton - Lazy Initialization
+
+CityMasterUtil cmuObj = CityMasterUtil.getInstance();
+System.Debug('Caught the Map 1');
+System.Debug(cmuObj.cityCodeWithCityRecordMap);
+CityMasterUtil cmuObj2 = CityMasterUtil.getInstance();
+System.Debug('Caught the Map 2');
+System.Debug(cmuObj2.cityCodeWithCityRecordMap);
+CityMasterUtil cmuObj3 = CityMasterUtil.getInstance();
+System.Debug('Caught the Map 3');
+System.Debug(cmuObj3.cityCodeWithCityRecordMap);
+
+
+Singleton - Eager Initialization
+
+ErrorMasterUtil emuObj = ErrorMasterUtil.getInstance();
+System.Debug('Caught the Map 1');
+System.Debug(emuObj.errorCodeWithMessageMap);
+ErrorMasterUtil emuObj2 = ErrorMasterUtil.getInstance();
+System.Debug('Caught the Map 1');
+System.Debug(emuObj2.errorCodeWithMessageMap);
+ErrorMasterUtil emuObj3 = ErrorMasterUtil.getInstance();
+System.Debug('Caught the Map 1');
+System.Debug(emuObj3.errorCodeWithMessageMap);
+
+Strategy
+
+Priority Algorithm - Managed Services 
+
+PrioritySetter prioritySettingMSObj = new PrioritySetter(AllConstants.PRIORITYALGO_MANAGEDSERVICES);
+List<Case> caseList = [Select Id from Case Limit 1];
+prioritySettingMSObj.setPriority(caseList);
+
+Priority Algorithm - Services 
+
+
+PrioritySetter prioritySettingServicesObj = new PrioritySetter(AllConstants.PRIORITYALGO_SERVICES);
+List<Case> caseList = [Select Id from Case Limit 1];
+prioritySettingServicesObj.setPriority(caseList);
